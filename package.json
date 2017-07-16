@@ -14,9 +14,14 @@
     "cookie-parser": "^1.4.3",
     "errorhandler": "^1.4.3",
     "express": "^4.14.0",
+    "express-fileupload": "^0.1.4",
+    "jpeg-autorotate": "^3.0.0",
     "method-override": "^2.3.6",
     "morgan": "^1.7.0",
-    "pug": "^2.0.0-beta6"
+    "pug": "^2.0.0-beta6",
+    "rotate": "0.0.1",
+    "typings": "^2.1.1",
+    "uuid": "^3.1.0"
   },
   "devDependencies": {
     "@types/body-parser": "0.0.33",
@@ -24,11 +29,25 @@
     "@types/errorhandler": "0.0.30",
     "@types/method-override": "0.0.29",
     "@types/morgan": "^1.7.32",
+    "browser-sync": "^2.18.12",
+    "browserify": "^14.4.0",
+    "chai": "^4.1.0",
     "grunt": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-ts": "^6.0.0-beta.3",
+    "gulp": "^3.9.1",
+    "gulp-istanbul": "^1.1.2",
+    "gulp-mocha": "^4.3.1",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-tslint": "^8.1.1",
+    "gulp-typescript": "^3.2.0",
+    "gulp-uglify": "^3.0.0",
     "nodemon": "^1.11.0",
-    "typescript": "^2.0.8"
+    "run-sequence": "^2.0.0",
+    "tslint": "^5.5.0",
+    "typescript": "^2.4.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }

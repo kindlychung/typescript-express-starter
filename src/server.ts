@@ -1,12 +1,14 @@
 import * as bodyParser from "body-parser";
 import * as cookieParser from "cookie-parser";
 import * as express from "express";
-import * as logger from "morgan";
+import * as morgan from "morgan";
 import * as path from "path";
+import * as fileUpload from "express-fileupload";
 import errorHandler = require("errorhandler");
 import methodOverride = require("method-override");
 
 import { IndexRoute } from "./routes/index";
+import { UploadRoute } from "./routes/upload";
 
 /**
  * The server.
@@ -67,14 +69,16 @@ export class Server {
    */
   public config() {
     //add static paths
-    this.app.use(express.static(path.join(__dirname, "public")));
+    this.app.use(express.static("public"));
 
     //configure pug
     this.app.set("views", path.join(__dirname, "views"));
     this.app.set("view engine", "pug");
 
     //mount logger
-    this.app.use(logger("dev"));
+    this.app.use(morgan('dev'));
+
+    this.app.use(fileUpload());
 
     //mount json form parser
     this.app.use(bodyParser.json());
@@ -91,9 +95,9 @@ export class Server {
     this.app.use(methodOverride());
 
     // catch 404 and forward to error handler
-    this.app.use(function(err: any, req: express.Request, res: express.Response, next: express.NextFunction) {
-        err.status = 404;
-        next(err);
+    this.app.use(function (err: any, req: express.Request, res: express.Response, next: express.NextFunction) {
+      err.status = 404;
+      next(err);
     });
 
     //error handling
@@ -111,10 +115,9 @@ export class Server {
     let router: express.Router;
     router = express.Router();
 
-    //IndexRoute
     IndexRoute.create(router);
+    UploadRoute.create(router);
 
-    //use router middleware
     this.app.use(router);
   }
 

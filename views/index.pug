@@ -1,5 +1,7 @@
 html
   head
-    title= title
+    title=title
   body
-    h1= message
+    form(ref="uploadForm", id="uploadForm", action="/rotate", method="post", encType="multipart/form-data")
+      input(type="file", name="sampleFile")
+      input(type="submit", name="Upload")

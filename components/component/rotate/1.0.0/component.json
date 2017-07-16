@@ -1,0 +1,19 @@
+{
+  "name": "rotate",
+  "description": "Canvas rotation with origin support",
+  "version": "1.0.0",
+  "keywords": [
+    "canvas",
+    "rotate",
+    "rotation"
+  ],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ],
+  "repository": "component/rotate",
+  "resolved": "cf3402ce7701d87b94126acda35204d58155aa57"
+}
